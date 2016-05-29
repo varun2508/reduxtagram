@@ -28,8 +28,16 @@ module.exports = {
 			{
 				test: /\.jsx?$/,
 				exclude: /(node_modules)/,
-				loaders: [ 'babel' ],
+				loader: 'babel',
 				include: path.join(__dirname, 'src/js')
+			},
+
+			// JSON
+			{
+				test: /\.json$/,
+				exclude: /(node_modules)/,
+				loader: 'json',
+				include: path.join(__dirname, 'src/fixtures')
 			},
 
 			// CSS
@@ -43,7 +51,7 @@ module.exports = {
 	},
 
 	resolve: {
-		extensions: [ '', '.js', '.jsx', '.styl' ],
+		extensions: [ '', '.js', '.jsx', '.styl', '.json' ],
 		fallback: path.join(__dirname, 'node_modules')
 	},
 
