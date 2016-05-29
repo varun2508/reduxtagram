@@ -1,9 +1,18 @@
 {
     "env": {
         "es6": true,
-        "node": true,
         "browser": true,
         "mocha": true
+    },
+
+    "plugins": [ "react" ],
+
+    "parserOptions": {
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true,
+            "modules": true
+        }
     },
 
     "ecmaFeatures": {
@@ -86,11 +95,25 @@
         "strict": [ 2, "global" ],
         "max-len": [ 2, { "code": 100, "tabWidth": 4, "ignoreUrls": true } ],
         "no-multiple-empty-lines": [ 2, { "max": 1 } ],
-        "react/jsx-uses-react": 2,
-        "react/jsx-uses-vars": 2,
-        "react/react-in-jsx-scope": 2
-    },
-    "plugins": [
-        "react"
-    ]
+
+        "react/display-name": [ 0 ],
+        "react/jsx-boolean-value": 1,
+        "react/jsx-curly-spacing": [ 1, "always" ],
+        "react/jsx-max-props-per-line": 1,
+        "react/jsx-no-duplicate-props": 2,
+        "react/jsx-no-undef": 2,
+        "react/jsx-sort-prop-types": 0,
+        "react/jsx-sort-props": 0,
+        "react/jsx-uses-react": 1,
+        "react/jsx-uses-vars": 1,
+        "react/no-did-mount-set-state": 1,
+        "react/no-did-update-set-state": 1,
+        "react/no-unknown-property": 2,
+        "react/prop-types": 2,
+        "react/react-in-jsx-scope": 2,
+        "react/require-extension": 1,
+        "react/self-closing-comp": 1,
+        "react/sort-comp": 1,
+        "react/wrap-multilines": 2
+    }
 }

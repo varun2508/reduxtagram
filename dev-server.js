@@ -1,5 +1,3 @@
-'use strict';
-
 const path = require('path');
 const express = require('express');
 const webpack = require('webpack');
@@ -25,10 +23,10 @@ app.get('*', function (req, res) {
 
 app.listen(8888, 'localhost', function (err) {
 	if (err) {
-		console.log(`Error: ${err}`);
+		console.log(`Error: ${err}`); // eslint-disable-line
 
 		process.exit(1);
 	}
 
-	console.log(`server running at http://localhost:${PORT}`);
+	console.log(`server running at http://localhost:${PORT}`); // eslint-disable-line
 });
