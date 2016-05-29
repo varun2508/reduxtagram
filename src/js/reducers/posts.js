@@ -1,9 +1,20 @@
-function posts(state = [], action) {
-	console.log('posts reducer');
-	console.log('state: ', state);
-	console.log('action: ', action);
+function posts(state = [], {type, postIndex}) {
+	switch (type) {
+		case 'INCREMENT_LIKES':
+			const post = state[postIndex];
 
-	return state;
+			return [
+				...state.slice(0, postIndex),
+				{
+					...post,
+					likes: post.likes + 1
+				},
+				...state.slice(postIndex + 1)
+			];
+
+		default:
+			return state;
+	}
 }
 
 export default posts;

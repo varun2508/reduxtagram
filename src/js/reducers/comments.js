@@ -1,9 +1,34 @@
-function comments(state = [], action) {
-	console.log('comments reducer');
-	console.log('state: ', state);
-	console.log('action: ', action);
+function postComments(state, action) {
+	switch (action.type) {
+		case 'ADD_COMMENT':
+			return [
+				...state,
+				{
+					user: action.author,
+					text: action.comment
+				}
+			];
 
-	return state;
+		case 'REMOVE_COMMENT':
+			const commentIndex = action.commentIndex;
+
+			return [
+				...state.slice(0, commentIndex),
+				...state.slice(commentIndex + 1)
+			];
+
+		default:
+			return state;
+	}
+}
+
+function comments(state = {}, action) {
+	const postId = action.postId;
+
+	return {
+		...state,
+		[ postId ]: postComments(state[postId], action)
+	}
 }
 
 export default comments;

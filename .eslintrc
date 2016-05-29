@@ -27,7 +27,8 @@
         "objectLiteralShorthandProperties": true,
         "restParams": true,
         "spread": true,
-        "templateStrings": true
+        "templateStrings": true,
+        "experimentalObjectRestSpread": true
     },
 
     "rules": {
@@ -109,7 +110,7 @@
         "react/no-did-mount-set-state": 1,
         "react/no-did-update-set-state": 1,
         "react/no-unknown-property": 2,
-        "react/prop-types": 2,
+        "react/prop-types": 1,
         "react/react-in-jsx-scope": 2,
         "react/require-extension": 1,
         "react/self-closing-comp": 1,
